@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://ukxcdg0sjqpd"]
+
+[ext_resource type="Texture2D" uid="uid://dp7t15qhr5r12" path="res://Themes/Minigame6/food-glitch_0.png" id="1_3nh5m"]
+[ext_resource type="Script" path="res://Script/minigame6/items.gd" id="1_ca0kp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pin53"]
+atlas = ExtResource("1_3nh5m")
+region = Rect2(0, 85, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53gtc"]
+atlas = ExtResource("1_3nh5m")
+region = Rect2(0, 225, 23, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewpkc"]
+atlas = ExtResource("1_3nh5m")
+region = Rect2(0, 209, 20, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8hd0"]
+atlas = ExtResource("1_3nh5m")
+region = Rect2(168, 168, 18, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orqyg"]
+atlas = ExtResource("1_3nh5m")
+region = Rect2(22, 102, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smdbb"]
+atlas = ExtResource("1_3nh5m")
+region = Rect2(62, 211, 20, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovkwm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pin53")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53gtc")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewpkc")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8hd0")
+}],
+"loop": true,
+"name": &"new_animation_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orqyg")
+}],
+"loop": true,
+"name": &"new_animation_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smdbb")
+}],
+"loop": true,
+"name": &"new_animation_4",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ugo1"]
+
+[node name="food3" type="Area2D"]
+scale = Vector2(3, 3)
+collision_layer = 2
+script = ExtResource("1_ca0kp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ovkwm")
+animation = &"new_animation_2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5ugo1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

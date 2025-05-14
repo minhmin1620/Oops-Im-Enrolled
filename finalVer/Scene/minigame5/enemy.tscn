@@ -1,0 +1,119 @@
+[gd_scene load_steps=16 format=3 uid="uid://d36wyxfiy1pde"]
+
+[ext_resource type="Texture2D" uid="uid://bkcaxsedyu4hf" path="res://Themes/Minigame5/MainCharacter-removebg-preview.png" id="1_20c44"]
+[ext_resource type="Script" path="res://Script/minigame5/enemy.gd" id="1_alvxl"]
+[ext_resource type="AudioStream" path="res://Themes/Minigame5/heartbeat.tres" id="3_7fu1q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0l4l"]
+size = Vector2(7, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c2m5"]
+atlas = ExtResource("1_20c44")
+region = Rect2(230, 270, 115, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1002b"]
+atlas = ExtResource("1_20c44")
+region = Rect2(0, 270, 115, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydek5"]
+atlas = ExtResource("1_20c44")
+region = Rect2(115, 270, 115, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7int"]
+atlas = ExtResource("1_20c44")
+region = Rect2(230, 96, 115, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dbwm"]
+atlas = ExtResource("1_20c44")
+region = Rect2(0, 96, 115, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8peck"]
+atlas = ExtResource("1_20c44")
+region = Rect2(115, 96, 115, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v8i4"]
+atlas = ExtResource("1_20c44")
+region = Rect2(115, 357, 115, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bmqh"]
+atlas = ExtResource("1_20c44")
+region = Rect2(0, 357, 115, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyo4c"]
+atlas = ExtResource("1_20c44")
+region = Rect2(230, 357, 115, 87)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pymab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c2m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1002b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydek5")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7int")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dbwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8peck")
+}],
+"loop": true,
+"name": &"side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v8i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bmqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyo4c")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xng1t"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_alvxl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_o0l4l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.6875, -2.1875)
+scale = Vector2(0.283696, 0.248563)
+sprite_frames = SubResource("SpriteFrames_pymab")
+animation = &"side"
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("RectangleShape2D_xng1t")
+
+[node name="heartbeat_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7fu1q")
+volume_db = 9.339
+pitch_scale = 2.1
+max_distance = 9000.0
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

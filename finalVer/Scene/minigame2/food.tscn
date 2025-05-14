@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5r6ub2q0rlku"]
+
+[ext_resource type="Script" path="res://Script/minigame2/food.gd" id="1_ol3bk"]
+[ext_resource type="Texture2D" uid="uid://dp7t15qhr5r12" path="res://Themes/Minigame6/food-glitch_0.png" id="2_88ojm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2stos"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hijt1"]
+atlas = ExtResource("2_88ojm")
+region = Rect2(42, 124, 20, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s04v"]
+atlas = ExtResource("2_88ojm")
+region = Rect2(2, 0, 20, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8djn"]
+atlas = ExtResource("2_88ojm")
+region = Rect2(22, 0, 20, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5o4b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hijt1")
+}],
+"loop": true,
+"name": &"coffee",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s04v")
+}],
+"loop": true,
+"name": &"food1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8djn")
+}],
+"loop": true,
+"name": &"food2",
+"speed": 5.0
+}]
+
+[node name="Food" type="Area2D"]
+script = ExtResource("1_ol3bk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_2stos")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u5o4b")
+animation = &"food2"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

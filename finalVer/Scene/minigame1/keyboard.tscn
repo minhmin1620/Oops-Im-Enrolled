@@ -1,0 +1,195 @@
+[gd_scene load_steps=5 format=3 uid="uid://bspum3olngkny"]
+
+[ext_resource type="Script" path="res://Script/minigame1/keyboard.gd" id="1_04552"]
+[ext_resource type="PackedScene" uid="uid://bx4i2vuld0gou" path="res://Scene/minigame1/keyboard_buttons.tscn" id="1_hofo5"]
+[ext_resource type="PackedScene" uid="uid://cd1lofobxywc7" path="res://Scene/minigame1/specialButton.tscn" id="2_u203b"]
+[ext_resource type="StyleBox" uid="uid://drvj6ascra6qg" path="res://Themes/Minigame1/Keyboard/specialButtons.tres" id="3_ld12f"]
+
+[node name="Keyboard" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_04552")
+
+[node name="FirstRow" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Q" parent="FirstRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "Q"
+
+[node name="W" parent="FirstRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "W"
+
+[node name="E" parent="FirstRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "E"
+
+[node name="R" parent="FirstRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "R"
+
+[node name="T" parent="FirstRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "T"
+
+[node name="Y" parent="FirstRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "Y"
+
+[node name="U" parent="FirstRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "U"
+
+[node name="I" parent="FirstRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "I"
+
+[node name="O" parent="FirstRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "O"
+
+[node name="P" parent="FirstRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "P"
+
+[node name="SecondRow" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="A" parent="SecondRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "A"
+
+[node name="S" parent="SecondRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+letter = "S"
+
+[node name="D" parent="SecondRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+letter = "D"
+
+[node name="F" parent="SecondRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+letter = "F"
+
+[node name="G" parent="SecondRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+letter = "G"
+
+[node name="H" parent="SecondRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+letter = "H"
+
+[node name="J" parent="SecondRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+letter = "J"
+
+[node name="K" parent="SecondRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+letter = "K"
+
+[node name="L" parent="SecondRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "L"
+
+[node name="ThirdRow" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Enter" parent="ThirdRow" instance=ExtResource("2_u203b")]
+custom_minimum_size = Vector2(80, 58)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("3_ld12f")
+theme_override_styles/disabled = ExtResource("3_ld12f")
+theme_override_styles/hover = ExtResource("3_ld12f")
+theme_override_styles/pressed = ExtResource("3_ld12f")
+theme_override_styles/normal = ExtResource("3_ld12f")
+text = "Enter"
+
+[node name="Z" parent="ThirdRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "Z"
+
+[node name="X" parent="ThirdRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+letter = "X"
+
+[node name="C" parent="ThirdRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+letter = "C"
+
+[node name="V" parent="ThirdRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+letter = "V"
+
+[node name="B" parent="ThirdRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+
+[node name="N" parent="ThirdRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+letter = "N"
+
+[node name="M" parent="ThirdRow" groups=["keyboard"] instance=ExtResource("1_hofo5")]
+layout_mode = 2
+text = "A"
+letter = "M"
+
+[node name="Delete" parent="ThirdRow" groups=["keyboard"] instance=ExtResource("2_u203b")]
+custom_minimum_size = Vector2(80, 58)
+layout_mode = 2
+theme_override_styles/focus = ExtResource("3_ld12f")
+theme_override_styles/disabled = ExtResource("3_ld12f")
+theme_override_styles/hover = ExtResource("3_ld12f")
+theme_override_styles/pressed = ExtResource("3_ld12f")
+theme_override_styles/normal = ExtResource("3_ld12f")
+text = "Delete"
+
+[connection signal="pressed" from="FirstRow/Q" to="." method="_on_key_pressed" binds= ["q"]]
+[connection signal="pressed" from="FirstRow/W" to="." method="_on_key_pressed" binds= ["w"]]
+[connection signal="pressed" from="FirstRow/E" to="." method="_on_key_pressed" binds= ["e"]]
+[connection signal="pressed" from="FirstRow/R" to="." method="_on_key_pressed" binds= ["r"]]
+[connection signal="pressed" from="FirstRow/T" to="." method="_on_key_pressed" binds= ["t"]]
+[connection signal="pressed" from="FirstRow/Y" to="." method="_on_key_pressed" binds= ["y"]]
+[connection signal="pressed" from="FirstRow/U" to="." method="_on_key_pressed" binds= ["u"]]
+[connection signal="pressed" from="FirstRow/I" to="." method="_on_key_pressed" binds= ["i"]]
+[connection signal="pressed" from="FirstRow/O" to="." method="_on_key_pressed" binds= ["o"]]
+[connection signal="pressed" from="FirstRow/P" to="." method="_on_key_pressed" binds= ["p"]]
+[connection signal="pressed" from="SecondRow/A" to="." method="_on_key_pressed" binds= ["a"]]
+[connection signal="pressed" from="SecondRow/S" to="." method="_on_key_pressed" binds= ["s"]]
+[connection signal="pressed" from="SecondRow/D" to="." method="_on_key_pressed" binds= ["d"]]
+[connection signal="pressed" from="SecondRow/F" to="." method="_on_key_pressed" binds= ["f"]]
+[connection signal="pressed" from="SecondRow/G" to="." method="_on_key_pressed" binds= ["g"]]
+[connection signal="pressed" from="SecondRow/H" to="." method="_on_key_pressed" binds= ["h"]]
+[connection signal="pressed" from="SecondRow/J" to="." method="_on_key_pressed" binds= ["j"]]
+[connection signal="pressed" from="SecondRow/K" to="." method="_on_key_pressed" binds= ["k"]]
+[connection signal="pressed" from="SecondRow/L" to="." method="_on_key_pressed" binds= ["l"]]
+[connection signal="pressed" from="ThirdRow/Enter" to="." method="_on_enter_pressed"]
+[connection signal="pressed" from="ThirdRow/Z" to="." method="_on_key_pressed" binds= ["z"]]
+[connection signal="pressed" from="ThirdRow/X" to="." method="_on_key_pressed" binds= ["x"]]
+[connection signal="pressed" from="ThirdRow/C" to="." method="_on_key_pressed" binds= ["c"]]
+[connection signal="pressed" from="ThirdRow/V" to="." method="_on_key_pressed" binds= ["v"]]
+[connection signal="pressed" from="ThirdRow/B" to="." method="_on_key_pressed" binds= ["b"]]
+[connection signal="pressed" from="ThirdRow/N" to="." method="_on_key_pressed" binds= ["n"]]
+[connection signal="pressed" from="ThirdRow/M" to="." method="_on_key_pressed" binds= ["m"]]
+[connection signal="pressed" from="ThirdRow/Delete" to="." method="_on_delete_pressed"]

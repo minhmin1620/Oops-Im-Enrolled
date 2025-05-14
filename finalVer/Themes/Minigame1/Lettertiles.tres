@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dyp7k3tgqxdk2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qaexs"]
+bg_color = Color(0.415686, 0.666667, 0.392157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3awk"]
+bg_color = Color(0.788235, 0.705882, 0.352941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkmhp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0ddm"]
+bg_color = Color(0.227451, 0.227451, 0.235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56j7b"]
+bg_color = Color(0.505882, 0.513726, 0.517647, 1)
+
+[resource]
+Correct/base_type = &"Panel"
+Correct/styles/panel = SubResource("StyleBoxFlat_qaexs")
+CorrectWrongPosi/base_type = &"Panel"
+CorrectWrongPosi/styles/panel = SubResource("StyleBoxFlat_v3awk")
+Empty/base_type = &"Panel"
+Empty/styles/panel = SubResource("StyleBoxFlat_lkmhp")
+Incorrect/base_type = &"Panel"
+Incorrect/styles/panel = SubResource("StyleBoxFlat_f0ddm")
+LetterAvailable/base_type = &"Button"
+LetterAvailable/styles/normal = SubResource("StyleBoxFlat_56j7b")

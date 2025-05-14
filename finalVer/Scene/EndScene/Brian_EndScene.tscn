@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0ufstgwti7fi"]
+
+[ext_resource type="Script" path="res://Scene/EndScene/brian_end_scene.gd" id="1_hsvch"]
+[ext_resource type="Texture2D" uid="uid://up0hewk5n4a1" path="res://Themes/Minigame5/Character_tile_set.png" id="2_hl4f2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6kaa"]
+atlas = ExtResource("2_hl4f2")
+region = Rect2(33, 16, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3if8"]
+atlas = ExtResource("2_hl4f2")
+region = Rect2(48, 16, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nprru"]
+atlas = ExtResource("2_hl4f2")
+region = Rect2(63, 16, 15, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_erwah"]
+animations = [{
+"frames": [{
+"duration": 1.4,
+"texture": SubResource("AtlasTexture_j6kaa")
+}, {
+"duration": 1.4,
+"texture": SubResource("AtlasTexture_p3if8")
+}, {
+"duration": 1.4,
+"texture": SubResource("AtlasTexture_nprru")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_hsvch")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_erwah")
+animation = &"idle"

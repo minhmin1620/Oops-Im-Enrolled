@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://nja3mcq2267x"]
+
+[ext_resource type="Script" path="res://Scene/minigame4/brian.gd" id="1_dkcsr"]
+[ext_resource type="Texture2D" uid="uid://dq3fjaqwlsx0j" path="res://Old_hero-removebg-preview.png" id="2_2k0lg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak411"]
+atlas = ExtResource("2_2k0lg")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ibxa"]
+atlas = ExtResource("2_2k0lg")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4ibt"]
+atlas = ExtResource("2_2k0lg")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvvr2"]
+atlas = ExtResource("2_2k0lg")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcrt7"]
+atlas = ExtResource("2_2k0lg")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xmmf"]
+atlas = ExtResource("2_2k0lg")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdi5a"]
+atlas = ExtResource("2_2k0lg")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aelrp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ak411")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ibxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4ibt")
+}],
+"loop": true,
+"name": &"standing",
+"speed": 1.25
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvvr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcrt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xmmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdi5a")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbc5e"]
+size = Vector2(12, 14)
+
+[node name="Bob" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_dkcsr")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aelrp")
+animation = &"standing"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_fbc5e")

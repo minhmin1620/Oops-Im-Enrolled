@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc2g62kqx6d2l"]
+
+[ext_resource type="PackedScene" uid="uid://du0c3p86ug8w2" path="res://Scene/minigame1/letter.tscn" id="1_8jbbv"]
+
+[node name="Row" type="HBoxContainer"]
+
+[node name="Letter" parent="." instance=ExtResource("1_8jbbv")]
+layout_mode = 2
+
+[node name="Letter2" parent="." instance=ExtResource("1_8jbbv")]
+layout_mode = 2
+
+[node name="Letter3" parent="." instance=ExtResource("1_8jbbv")]
+layout_mode = 2
+
+[node name="Letter4" parent="." instance=ExtResource("1_8jbbv")]
+layout_mode = 2
+
+[node name="Letter5" parent="." instance=ExtResource("1_8jbbv")]
+layout_mode = 2

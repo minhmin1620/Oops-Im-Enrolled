@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bmisr3pls578m"]
+
+[ext_resource type="Texture2D" uid="uid://dp7t15qhr5r12" path="res://Themes/Minigame6/food-glitch_0.png" id="1_ws01i"]
+
+[resource]
+atlas = ExtResource("1_ws01i")
+region = Rect2(189, 162, 17, 27)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://du0c3p86ug8w2"]
+
+[ext_resource type="Script" path="res://Script/minigame1/letter.gd" id="1_76e73"]
+[ext_resource type="Theme" uid="uid://dyp7k3tgqxdk2" path="res://Themes/Minigame1/Lettertiles.tres" id="1_oiwml"]
+
+[node name="Letter" type="Panel"]
+custom_minimum_size = Vector2(40, 40)
+theme = ExtResource("1_oiwml")
+script = ExtResource("1_76e73")
+letter = "A"
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1

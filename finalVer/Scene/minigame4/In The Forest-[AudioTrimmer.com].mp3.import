@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dc4ry834cr5oi"
+path="res://.godot/imported/In The Forest-[AudioTrimmer.com].mp3-905f4ce04b4dd90f0d8effec04c9276b.mp3str"
+
+[deps]
+
+source_file="res://Scene/minigame4/In The Forest-[AudioTrimmer.com].mp3"
+dest_files=["res://.godot/imported/In The Forest-[AudioTrimmer.com].mp3-905f4ce04b4dd90f0d8effec04c9276b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

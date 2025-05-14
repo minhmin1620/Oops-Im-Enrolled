@@ -1,0 +1,16 @@
+# Godot 4+ specific ignores
+.godot/
+.android/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Exported binaries
+export_presets.cfg
+
+# Godot build system files
+build/
+
+# User-specific project settings
+imported/

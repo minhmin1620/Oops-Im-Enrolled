@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf8aidtcgfr2i"]
+
+[ext_resource type="Texture2D" uid="uid://mvhpijerjbri" path="res://Extras/Speech Bubble .png" id="1_asttv"]
+[ext_resource type="Script" path="res://Extras/speech_bubbles.gd" id="1_ub03x"]
+
+[node name="Speech_Bubbles" type="MarginContainer"]
+z_index = 6
+offset_right = 74.0
+offset_bottom = 65.0
+script = ExtResource("1_ub03x")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_asttv")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 21
+patch_margin_top = 16
+patch_margin_right = 22
+patch_margin_bottom = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 18
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

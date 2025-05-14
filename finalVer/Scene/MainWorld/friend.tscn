@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://bc7t3efme0h4j"]
+
+[ext_resource type="Texture2D" uid="uid://ckg37pap4adnu" path="res://Themes/MainWorld/Friend.png" id="1_o8c1t"]
+[ext_resource type="Script" path="res://Scene/MainWorld/friend.gd" id="1_wgupr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogp73"]
+atlas = ExtResource("1_o8c1t")
+region = Rect2(1, 2, 55, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50oee"]
+atlas = ExtResource("1_o8c1t")
+region = Rect2(111, 188, 55, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxdrq"]
+atlas = ExtResource("1_o8c1t")
+region = Rect2(56, 188, 55, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yih6"]
+atlas = ExtResource("1_o8c1t")
+region = Rect2(1, 188, 55, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfo1k"]
+atlas = ExtResource("1_o8c1t")
+region = Rect2(111, 126, 55, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ns7s"]
+atlas = ExtResource("1_o8c1t")
+region = Rect2(56, 126, 55, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8q0u"]
+atlas = ExtResource("1_o8c1t")
+region = Rect2(1, 126, 55, 62)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sbcxu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogp73")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50oee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxdrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yih6")
+}],
+"loop": true,
+"name": &"walk-right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfo1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ns7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8q0u")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t85s8"]
+radius = 22.0
+height = 64.0
+
+[node name="Friend" type="CharacterBody2D"]
+script = ExtResource("1_wgupr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sbcxu")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_t85s8")

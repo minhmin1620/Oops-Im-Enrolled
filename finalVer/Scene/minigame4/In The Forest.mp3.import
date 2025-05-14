@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://75itwy01am1q"
+path="res://.godot/imported/In The Forest.mp3-58696c3a6b12392de0f0e50466782a7a.mp3str"
+
+[deps]
+
+source_file="res://Scene/minigame4/In The Forest.mp3"
+dest_files=["res://.godot/imported/In The Forest.mp3-58696c3a6b12392de0f0e50466782a7a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

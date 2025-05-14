@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8gpvcs00agx4"]
+
+[ext_resource type="Script" path="res://Scene/minigame4/key.gd" id="1_ptxvq"]
+[ext_resource type="Texture2D" uid="uid://dgqvcnn0dl7cb" path="res://Pacman-sprite.png" id="1_tbqsy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmikq"]
+atlas = ExtResource("1_tbqsy")
+region = Rect2(210, 220, 21, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlmh6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmikq")
+}],
+"loop": true,
+"name": &"Key",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2stos"]
+radius = 4.0
+height = 14.0
+
+[node name="Key" type="Area2D"]
+script = ExtResource("1_ptxvq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qlmh6")
+animation = &"Key"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_2stos")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpm34mlf5cwgi"
+path="res://.godot/imported/Worldmap Theme.mp3-d43b035a1687d696914109360ad8079a.mp3str"
+
+[deps]
+
+source_file="res://Script/minigame2/Worldmap Theme.mp3"
+dest_files=["res://.godot/imported/Worldmap Theme.mp3-d43b035a1687d696914109360ad8079a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

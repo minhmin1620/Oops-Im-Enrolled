@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://du6jb1afnkh8a"]
+
+[ext_resource type="Script" path="res://Script/minigame1/validation_alert.gd" id="1_jhklp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rha5w"]
+
+[node name="ValidationAlert" type="Panel"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+script = ExtResource("1_jhklp")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 45)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 35.0
+offset_right = 100.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_rha5w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

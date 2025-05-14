@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtdiloc1dgwqv"]
+
+[ext_resource type="Script" path="res://Script/minigame1/tries_controller.gd" id="1_cp0yg"]
+[ext_resource type="PackedScene" uid="uid://bc2g62kqx6d2l" path="res://Scene/minigame1/row.tscn" id="1_jinfv"]
+[ext_resource type="PackedScene" uid="uid://bspum3olngkny" path="res://Scene/minigame1/keyboard.tscn" id="2_w0cqv"]
+[ext_resource type="Script" path="res://Script/minigame1/word_pool.gd" id="3_4xepn"]
+[ext_resource type="PackedScene" uid="uid://du6jb1afnkh8a" path="res://Scene/minigame1/validation_alert.tscn" id="5_mq7u5"]
+[ext_resource type="PackedScene" uid="uid://c5jqdqnhbvy3n" path="res://Scene/minigame1/result_ui.tscn" id="6_fmmrw"]
+
+[node name="Minigame1" type="Node"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Tries" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+script = ExtResource("1_cp0yg")
+
+[node name="Row" parent="MarginContainer/VBoxContainer/CenterContainer/Tries" instance=ExtResource("1_jinfv")]
+layout_mode = 2
+
+[node name="Row2" parent="MarginContainer/VBoxContainer/CenterContainer/Tries" instance=ExtResource("1_jinfv")]
+layout_mode = 2
+
+[node name="Row3" parent="MarginContainer/VBoxContainer/CenterContainer/Tries" instance=ExtResource("1_jinfv")]
+layout_mode = 2
+
+[node name="Row4" parent="MarginContainer/VBoxContainer/CenterContainer/Tries" instance=ExtResource("1_jinfv")]
+layout_mode = 2
+
+[node name="Row5" parent="MarginContainer/VBoxContainer/CenterContainer/Tries" instance=ExtResource("1_jinfv")]
+layout_mode = 2
+
+[node name="Keyboard" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_w0cqv")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="WordPool" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_4xepn")
+
+[node name="ValidationAlert" parent="." instance=ExtResource("5_mq7u5")]
+unique_name_in_owner = true
+
+[node name="ResultUi" parent="." instance=ExtResource("6_fmmrw")]
+unique_name_in_owner = true
+loseColor = Color(0.960784, 0, 0, 1)
+winColor = Color(0, 1, 0, 1)
+
+[connection signal="delete_press" from="MarginContainer/VBoxContainer/Keyboard" to="MarginContainer/VBoxContainer/CenterContainer/Tries" method="_on_keyboard_delete_press"]
+[connection signal="enter_pressed" from="MarginContainer/VBoxContainer/Keyboard" to="MarginContainer/VBoxContainer/CenterContainer/Tries" method="_on_keyboard_enter_pressed"]
+[connection signal="letter_pressed" from="MarginContainer/VBoxContainer/Keyboard" to="MarginContainer/VBoxContainer/CenterContainer/Tries" method="_on_keyboard_letter_pressed"]

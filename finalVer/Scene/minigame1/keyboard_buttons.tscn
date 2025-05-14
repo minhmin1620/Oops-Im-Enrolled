@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx4i2vuld0gou"]
+
+[ext_resource type="StyleBox" uid="uid://bm35xvug4ontr" path="res://Themes/Minigame1/Keyboard/Available_keyboard_buttons.tres" id="1_irpwp"]
+[ext_resource type="Script" path="res://Script/minigame1/keyboard_buttons.gd" id="1_v4wti"]
+[ext_resource type="StyleBox" uid="uid://bvbskvndl3a0l" path="res://Themes/Minigame1/Keyboard/Correct_keyboard_buttons.tres" id="1_ye0gv"]
+[ext_resource type="StyleBox" uid="uid://u0si1x81xk00" path="res://Themes/Minigame1/Keyboard/CorrectWrongPosi_keyboard_buttons.tres" id="2_cbre3"]
+[ext_resource type="StyleBox" uid="uid://ckl8l1inb0715" path="res://Themes/Minigame1/Keyboard/Used_keyboard_buttons.tres" id="4_0hvhk"]
+
+[sub_resource type="Theme" id="Theme_00yg0"]
+Available/base_type = &"Button"
+Available/styles/disabled = ExtResource("1_irpwp")
+Available/styles/focus = ExtResource("1_irpwp")
+Available/styles/hover = ExtResource("1_irpwp")
+Available/styles/normal = ExtResource("1_irpwp")
+Available/styles/panel = ExtResource("1_irpwp")
+Available/styles/pressed = ExtResource("1_irpwp")
+Correct/base_type = &"Button"
+Correct/styles/disabled = ExtResource("1_ye0gv")
+Correct/styles/focus = ExtResource("1_ye0gv")
+Correct/styles/hover = ExtResource("1_ye0gv")
+Correct/styles/normal = ExtResource("1_ye0gv")
+Correct/styles/pressed = ExtResource("1_ye0gv")
+CorrectWrongPosi/base_type = &"Button"
+CorrectWrongPosi/styles/disabled = ExtResource("2_cbre3")
+CorrectWrongPosi/styles/focus = ExtResource("2_cbre3")
+CorrectWrongPosi/styles/hover = ExtResource("2_cbre3")
+CorrectWrongPosi/styles/normal = ExtResource("2_cbre3")
+CorrectWrongPosi/styles/panel = ExtResource("2_cbre3")
+CorrectWrongPosi/styles/pressed = ExtResource("2_cbre3")
+Used/base_type = &"Button"
+Used/styles/disabled = ExtResource("4_0hvhk")
+Used/styles/focus = ExtResource("4_0hvhk")
+Used/styles/hover = ExtResource("4_0hvhk")
+Used/styles/normal = ExtResource("4_0hvhk")
+Used/styles/panel = ExtResource("4_0hvhk")
+Used/styles/pressed = ExtResource("4_0hvhk")
+
+[node name="KeyboardButtons" type="Button"]
+custom_minimum_size = Vector2(43, 58)
+offset_right = 8.0
+offset_bottom = 8.0
+theme = SubResource("Theme_00yg0")
+script = ExtResource("1_v4wti")
+letter = "B"

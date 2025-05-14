@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbhvfnwwtw7qu"]
+
+[ext_resource type="Script" path="res://Script/About/about.gd" id="1_5wh4y"]
+[ext_resource type="Texture2D" uid="uid://c56tn8s2ixa7r" path="res://Themes/inline-frcampus.jpg" id="2_1c8d2"]
+
+[sub_resource type="Theme" id="Theme_uk257"]
+
+[node name="About" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5wh4y")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 641.0
+theme = SubResource("Theme_uk257")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 29.0
+offset_right = 981.0
+offset_bottom = 651.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "About"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Oops I am enrolled! is a fun interactive game that features collection of mini-games that celebrate and challenge the experience of life at the University of New Brunswick (UNB).
+
+From parking lot madness, to navigating complex campus mazes, to sprinting through side-scrolling obstacle courses — each mini-game offers a unique, fast-paced test of your skills, reflexes, and student survival instincts.
+
+By playing the game you  overcome the unexpected hurdles that every student faces.
+
+Objective:
+Complete all mini-games successfully to graduate as the ultimate UNB student survivor! Progress through the games one by one — failure in any challenge means retrying until you succeed. Stay focused, adapt quickly, and aim for victory."
+fit_content = true
+tab_size = 16
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Authors and Credits"
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "
+								Authors: Minh Nhat Nguyen, Mackenzie Carter, Rostyslav Kolodij
+
+																			Special thanks to: 
+UNB for inspiration
+Godot Engine
+Professor Ian Smith
+
+©2025 Oops, I am enrolled!"
+fit_content = true
+
+[node name="BackButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Back to Main Menu"
+
+[node name="Inline-frcampus" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.121569)
+z_index = 10
+position = Vector2(576, 321.25)
+scale = Vector2(1.5266, 1.71833)
+texture = ExtResource("2_1c8d2")

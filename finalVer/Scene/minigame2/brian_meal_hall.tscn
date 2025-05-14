@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://bsk5gtt4ysisy"]
+
+[ext_resource type="Script" path="res://Script/minigame2/brian_meal_hall.gd" id="1_71lql"]
+[ext_resource type="Texture2D" uid="uid://dq3fjaqwlsx0j" path="res://Old_hero-removebg-preview.png" id="2_87vlf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dwus"]
+atlas = ExtResource("2_87vlf")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ev7x"]
+atlas = ExtResource("2_87vlf")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rf0s1"]
+atlas = ExtResource("2_87vlf")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jswvk"]
+atlas = ExtResource("2_87vlf")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ck720"]
+atlas = ExtResource("2_87vlf")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jfyc"]
+atlas = ExtResource("2_87vlf")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrcdp"]
+atlas = ExtResource("2_87vlf")
+region = Rect2(96, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6am8"]
+atlas = ExtResource("2_87vlf")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owg0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dwus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ev7x")
+}],
+"loop": true,
+"name": &"standing",
+"speed": 1.25
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rf0s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jswvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ck720")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jfyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrcdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6am8")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ogefx"]
+radius = 5.0
+height = 18.0
+
+[node name="brian_main" type="CharacterBody2D" groups=["Brian"]]
+script = ExtResource("1_71lql")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_owg0f")
+animation = &"standing"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Brian"]]
+shape = SubResource("CapsuleShape2D_ogefx")

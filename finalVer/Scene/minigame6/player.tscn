@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://cxmvpp32py117"]
+
+[ext_resource type="Texture2D" uid="uid://c2yn80hukp544" path="res://Themes/Minigame6/Old_hero-removebg-preview.png" id="1_mhby0"]
+[ext_resource type="Script" path="res://Script/minigame6/player.gd" id="1_rt5a4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jyfpe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgoy8"]
+atlas = ExtResource("1_mhby0")
+region = Rect2(79, 16, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h08vu"]
+atlas = ExtResource("1_mhby0")
+region = Rect2(17, 16, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffbwq"]
+atlas = ExtResource("1_mhby0")
+region = Rect2(17, 32, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1so1u"]
+atlas = ExtResource("1_mhby0")
+region = Rect2(49, 32, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbeet"]
+atlas = ExtResource("1_mhby0")
+region = Rect2(64, 32, 15, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gaw5r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgoy8")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h08vu")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffbwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1so1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbeet")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_itv7o"]
+radius = 7.0
+height = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_72tf4"]
+radius = 8.0
+height = 16.0
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 10
+material = SubResource("CanvasItemMaterial_jyfpe")
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_rt5a4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 4
+sprite_frames = SubResource("SpriteFrames_gaw5r")
+animation = &"hit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_itv7o")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_72tf4")

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bw5neladiywfw"]
+
+[node name="food" type="Node2D"]
+
+[node name="Alcohol" type="Sprite2D" parent="."]

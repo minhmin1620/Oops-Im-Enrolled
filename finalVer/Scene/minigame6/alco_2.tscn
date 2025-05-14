@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2jg4efvh4a0g"]
+
+[ext_resource type="Texture2D" uid="uid://dp7t15qhr5r12" path="res://Themes/Minigame6/food-glitch_0.png" id="1_ctyci"]
+[ext_resource type="Script" path="res://Script/minigame6/items.gd" id="1_jlmc0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hloaq"]
+atlas = ExtResource("1_ctyci")
+region = Rect2(104, 125, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfe6l"]
+atlas = ExtResource("1_ctyci")
+region = Rect2(144, 125, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyk83"]
+atlas = ExtResource("1_ctyci")
+region = Rect2(124, 125, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1d8j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hloaq")
+}],
+"loop": true,
+"name": &"BeerPint",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfe6l")
+}],
+"loop": true,
+"name": &"Cocktail_Orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyk83")
+}],
+"loop": true,
+"name": &"Cocktail_Yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csb3x"]
+size = Vector2(17, 20)
+
+[node name="Alco2" type="Area2D"]
+scale = Vector2(3, 3)
+collision_layer = 2
+script = ExtResource("1_jlmc0")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p1d8j")
+animation = &"Cocktail_Yellow"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_csb3x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

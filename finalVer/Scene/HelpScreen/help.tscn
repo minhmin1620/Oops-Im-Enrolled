@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfnh8xuuqcpxv"]
+
+[ext_resource type="Script" path="res://Scene/HelpScreen/help.gd" id="1_1jo74"]
+[ext_resource type="Texture2D" uid="uid://c56tn8s2ixa7r" path="res://Themes/inline-frcampus.jpg" id="1_6s5tx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vt5bs"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_yn13q"]
+font_size = 28
+
+[sub_resource type="FontFile" id="FontFile_v2j0q"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+
+[node name="Help" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1jo74")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 644.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 53.0
+offset_right = 1050.0
+offset_bottom = 639.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Basic Controls
+"
+label_settings = SubResource("LabelSettings_vt5bs")
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 22
+text = "   	   ↑ 
+ ←		 →	- for navigating main world and move around in all games
+       ↓
+Enter - provides access to play next text prompt on main world and used for jumping in most games
+
+Esc - return to menu"
+fit_content = true
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "
+Hints
+"
+label_settings = SubResource("LabelSettings_yn13q")
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "
+Explore aroud each building to find next challenge!
+
+Make use of challenge count down in the top left game
+
+Anddddd, the most important one, have fun:)
+"
+fit_content = true
+
+[node name="BackButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_v2j0q")
+theme_override_font_sizes/font_size = 22
+text = "Back to Menu"
+
+[node name="Inline-frcampus" type="Sprite2D" parent="Panel"]
+modulate = Color(1, 1, 1, 0.270588)
+position = Vector2(573.5, 313)
+scale = Vector2(1.51729, 1.68194)
+texture = ExtResource("1_6s5tx")
+
+[connection signal="pressed" from="Panel/VBoxContainer/BackButton" to="." method="_on_button_pressed"]
