@@ -1,6 +1,3 @@
-Great! Here's an updated `README.md` with a **Controls** section added in a clean and readable format:
-
----
 
 # 🎓 Oops! I Am Enrolled!
 
@@ -39,25 +36,6 @@ Each level represents a different challenge faced by students. Fail a level? You
 
 ## 👨‍💻 Authors
 
-* Minh Nhat Nguyen
-* Mackenzie Carter
-* Rostyslav Kolodij
-
----
-
-## 🙏 Special Thanks
-
-* University of New Brunswick – for daily inspiration
-* Godot Engine – for powering this game
-* Professor Ian Smith – for guidance and support
-
----
-
-## 📄 License
-
-© 2025 *Oops! I Am Enrolled!*
-All rights reserved. For educational and entertainment use only.
-
----
-
-Let me know if you'd like a version formatted for PDF, printed flyers, or if you'd like to add GIFs/screenshots of gameplay.
+* Minh Nhat Nguyen - https://github.com/minhmin1620
+* Mackenzie Carter - https://github.com/kenziecarter
+* Rostyslav Kolodij - https://github.com/rostys-love
